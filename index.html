@@ -59,6 +59,22 @@
         <label for="key3-0">Disabled</label>
 </fieldset>
 
+<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+    <legend>Show Circles (minutes)</legend>
+    	<input name="key5" id="key5-0" data-type="int" value="0" checked="checked" type="radio">
+        <label for="key5-0">Enabled</label>
+        <input name="key5" id="key5-1" data-type="int" value="1" type="radio">
+        <label for="key5-1">Disabled</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+    <legend>Show Squares (hours)</legend>
+    	<input name="key6" id="key6-0" data-type="int" value="0" checked="checked" type="radio">
+        <label for="key6-0">Enabled</label>
+        <input name="key6" id="key6-1" data-type="int" value="1" type="radio">
+        <label for="key6-1">Disabled</label>
+</fieldset>
+
 </div>
 
 <div data-role="collapsible">
@@ -91,7 +107,9 @@
           'btrealert':     Number($("input[name=key1]:checked").val() ),
           'theme':     Number( $("input[name=key2]:checked").val() ),
           'batterybar':     Number( $("input[name=key3]:checked").val() ),
-          'animations':     Number($("input[name=key4]").val()),
+          'animations':     Number($("input[name=key4]:checked").val()),
+          'showcircles':     Number($("input[name=key5]:checked").val()),
+          'showsquares':     Number($("input[name=key6]:checked").val()),
         }
         return options;
       }
@@ -111,6 +129,10 @@
           $("input[name=key3]").checkboxradio('refresh');
           $("input[name=key4][id=key4-"+ls_pto["animations"]+"]").prop('checked',true);
           $("input[name=key4]").checkboxradio('refresh');
+          $("input[name=key5][id=key5-"+ls_pto["showcircles"]+"]").prop('checked',true);
+          $("input[name=key5]").checkboxradio('refresh');
+          $("input[name=key6][id=key6-"+ls_pto["showsquares"]+"]").prop('checked',true);
+          $("input[name=key6]").checkboxradio('refresh');
         }
        }
         $("#b-cancel").click(function() {
