@@ -60,6 +60,17 @@
 </fieldset>
 
 <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+    <legend>Animation Speed</legend>
+    <i>The amount of milliseconds per showing of square/circle</i>
+    	<input name="key8" id="key8-0" data-type="int" value="0" checked="checked" type="radio">
+        <label for="key8-0">100 ms</label>
+        <input name="key8" id="key8-1" data-type="int" value="1" type="radio">
+        <label for="key8-1">50 ms</label>
+        <input name="key8" id="key8-2" data-type="int" value="2" type="radio">
+        <label for="key8-2">Random (between 25-100 ms)</label>
+</fieldset>
+
+<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
     <legend>Battery Bar</legend>
     	<input name="key3" id="key3-1" data-type="int" value="1" checked="checked" type="radio">
         <label for="key3-1">Enabled</label>
@@ -119,6 +130,7 @@
           'showcircles':     Number($("input[name=key5]:checked").val()),
           'showsquares':     Number($("input[name=key6]:checked").val()),
           'hourlyvibe':     Number($("input[name=key7]:checked").val()),
+          'animset':     Number($("input[name=key8]:checked").val()),
         }
         return options;
       }
@@ -144,6 +156,8 @@
           $("input[name=key6]").checkboxradio('refresh');
           $("input[name=key7][id=key7-"+ls_pto["hourlyvibe"]+"]").prop('checked',true);
           $("input[name=key7]").checkboxradio('refresh');
+          $("input[name=key8][id=key8-"+ls_pto["animset"]+"]").prop('checked',true);
+          $("input[name=key8]").checkboxradio('refresh');
         }
        }
         $("#b-cancel").click(function() {
