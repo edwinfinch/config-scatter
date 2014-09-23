@@ -39,6 +39,14 @@
         <label for="key1-1">Yes</label>
 </fieldset>
 
+<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+    <legend>Hourly Vibe</legend>
+    	<input name="key7" id="key7-0" data-type="int" value="0" checked="checked" type="radio">
+        <label for="key7-0">Disabled</label>
+        <input name="key7" id="key7-1" data-type="int" value="1" type="radio">
+        <label for="key7-1">Enabled</label>
+</fieldset>
+
 </div>
 
 <div data-role="collapsible">
@@ -110,6 +118,7 @@
           'animations':     Number($("input[name=key4]:checked").val()),
           'showcircles':     Number($("input[name=key5]:checked").val()),
           'showsquares':     Number($("input[name=key6]:checked").val()),
+          'hourlyvibe':     Number($("input[name=key7]:checked").val()),
         }
         return options;
       }
@@ -133,6 +142,8 @@
           $("input[name=key5]").checkboxradio('refresh');
           $("input[name=key6][id=key6-"+ls_pto["showsquares"]+"]").prop('checked',true);
           $("input[name=key6]").checkboxradio('refresh');
+          $("input[name=key7][id=key7-"+ls_pto["hourlyvibe"]+"]").prop('checked',true);
+          $("input[name=key7]").checkboxradio('refresh');
         }
        }
         $("#b-cancel").click(function() {
