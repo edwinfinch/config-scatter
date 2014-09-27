@@ -72,6 +72,20 @@
         <label for="key8-3">15 ms (battery saver)</label>
 </fieldset>
 
+<fieldset data-role="controlgroup" data-type="verticle" data-mini="true">
+    <legend>Constant Animation</legend>
+    <i>These animations are constantly running and will drain more battery, but they look pretty!</i>
+    <b>These features are for users rocking 1.3 or higher. (If no version number slides in on loading the face,
+    	you're not on 1.3+)
+    </b>
+    	<input name="key9" id="key9-0" data-type="int" value="0" checked="checked" type="radio">
+        <label for="key9-0">Disabled</label>
+        <input name="key9" id="key9-1" data-type="int" value="1" type="radio">
+        <label for="key9-1">Heart Beat</label>
+        <input name="key9" id="key9-2" data-type="int" value="2" type="radio">
+        <label for="key9-2">Switch</label>
+</fieldset>
+
 <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
     <legend>Battery Bar</legend>
     	<input name="key3" id="key3-1" data-type="int" value="1" checked="checked" type="radio">
@@ -109,6 +123,14 @@
         <label for="key4-0">Disabled</label>
 </fieldset>
 
+<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+    <legend>Boot Version</legend>
+    	<input name="key10" id="key10-1" data-type="int" value="1" checked="checked" type="radio">
+        <label for="key10-1">Enabled</label>
+        <input name="key10" id="key10-0" data-type="int" value="0" type="radio">
+        <label for="key10-0">Disabled</label>
+</fieldset>
+
 </div>
 
 </div>
@@ -133,6 +155,8 @@
           'showsquares':     Number($("input[name=key6]:checked").val()),
           'hourlyvibe':     Number($("input[name=key7]:checked").val()),
           'animset':     Number($("input[name=key8]:checked").val()),
+          'constanim':     Number($("input[name=key9]:checked").val()),
+          'bootglance':     Number($("input[name=key10]:checked").val()),
         }
         return options;
       }
@@ -160,6 +184,10 @@
           $("input[name=key7]").checkboxradio('refresh');
           $("input[name=key8][id=key8-"+ls_pto["animset"]+"]").prop('checked',true);
           $("input[name=key8]").checkboxradio('refresh');
+          $("input[name=key9][id=key9-"+ls_pto["constanim"]+"]").prop('checked',true);
+          $("input[name=key9]").checkboxradio('refresh');
+          $("input[name=key10][id=key10-"+ls_pto["bootglance"]+"]").prop('checked',true);
+          $("input[name=key10]").checkboxradio('refresh');
         }
        }
         $("#b-cancel").click(function() {
